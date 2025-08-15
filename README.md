@@ -1,36 +1,36 @@
-Automated File Cleanup Script
+# Automated File Cleanup Script
 
-This project is a simple Linux Shell Script that automatically removes files older than a specified number of days from the current directory. It is useful for automating cleanup tasks, saving disk space, and keeping directories organized.
+This is a simple **Linux Shell Script** that automatically removes files older than a specified number of days from the current directory. It helps automate cleanup tasks, save disk space, and keep directories organized.
 
-📌 Features
+---
 
-Deletes files older than a specified number of days.
+## 📌 Features
+- Deletes files older than a specified number of days  
+- Uses Linux commands (`date`, `rm`) to calculate file age  
+- Works in any Linux/Unix environment with **Bash shell**  
+- Can be scheduled with **cron jobs** for automatic cleanup  
 
-Uses Linux commands (date, rm) to calculate file age.
+---
 
-Works in any Linux/Unix environment with Bash shell.
+## 🛠️ Technologies Used
+- Linux  
+- Bash Shell Scripting  
+- Linux Command-Line Tools (`date`, `rm`, file handling)  
 
-Can be scheduled with cron jobs for automatic cleanup.
+---
 
-🛠️ Technologies Used
+## 🚀 How It Works
+1. The script sets a threshold number of days (`days=4` by default)  
+2. It calculates the current time in **seconds since epoch**  
+3. It checks each file’s last modified time using `date -r`  
+4. If a file is older than the threshold, it is removed automatically  
 
-Linux
+---
 
-Bash Shell Scripting
 
-Linux Command-Line Tools (date, rm, file handling)
 
-🚀 How It Works
-
-The script sets a threshold number of days (days=4 by default).
-
-It calculates the current time in seconds since epoch.
-
-It checks each file’s last modified time using date -r.
-
-If a file is older than the threshold, it is removed automatically.
-
-📂 Script Example
+## 📂 Script Example
+```bash
 #!/bin/bash
 
 # Set the number of days
@@ -49,53 +49,65 @@ do
     rm "$file"
   fi
 done
+```
 
 
 📥 Installation & Usage
 
-Save the script into a file, e.g. cleanup.sh.
+Save the script into a file, e.g. cleanup.sh
+
 
 Make the script executable:
-
+```bash
 chmod +x cleanup.sh
+```
 
 
 Run the script:
-
+```bash
 ./cleanup.sh
+```
 
 
-The script will remove all files in the current directory older than 4 days (or the number you set).
+The script will remove all files in the current directory older than 4 days (or the number you set)
+
+
 
 ⚠️ Important Notes
 
-This script permanently deletes files. Test it in a safe directory before using in production.
+This script permanently deletes files → test it in a safe directory first
 
 You can change the number of days by modifying:
 
-days=4
+Days=4
+
+
 
 ⏲️ Automating with Cron (Optional)
 
 To run this script automatically every day at midnight:
-
+```bash
 crontab -e
+```
 
 
 Add the following line:
-
+```bash
 0 0 * * * /path/to/cleanup.sh
+```
+
 
 📌 Example Use Cases
 
-Automatically clear old log files.
+-> Automatically clear old log files
 
-Remove temporary files in project directories.
+-> Remove temporary files in project directories
 
-Keep system folders clean and optimized.
+-> Keep system folders clean and optimized
 
-👨‍💻 Author
 
-Purushottam Kumar
+## 👨‍💻 Author
 
-Skills: Linux, Bash Scripting, File Handling, Automation
+  Purushottam Kumar
+
+## Skills: Linux, Bash Scripting, File Handling, Automation
